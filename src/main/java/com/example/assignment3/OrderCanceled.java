@@ -2,10 +2,11 @@ package com.example.assignment3;
 
 import java.time.LocalDateTime;
 
-public class OrderCanceled implements Events{
+public class OrderCanceled extends Events {
     private int orderId;
     private LocalDateTime timeAt;
 
+    public OrderCanceled(){}
     public OrderCanceled(int orderId) {
         this.orderId = orderId;
         this.timeAt = LocalDateTime.now();

@@ -10,9 +10,9 @@ public class CommandHandler {
     }
     private  int orderIdCounter = 1;
 
-    public void placeOrder(String userId, String type, double amount, double price) {
+    public void placeOrder(String userId, String otype, double amount, double price) {
         int orderId = orderIdCounter++;
-        OrderPlaced orderPlaced = new OrderPlaced(orderId, userId, price, amount,type );
+        OrderPlaced orderPlaced = new OrderPlaced(orderId, userId, price, amount,otype );
         events.appendEvent(orderPlaced);
     }
     public void cancelOrder(int orderId) {

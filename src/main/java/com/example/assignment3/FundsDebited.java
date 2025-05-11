@@ -2,11 +2,12 @@ package com.example.assignment3;
 
 import java.time.LocalDateTime;
 
-public class FundsDebited implements Events{
+public class FundsDebited extends Events{
     private String placedBy;
     private double funds;
     private LocalDateTime timeAt;
 
+    public FundsDebited(){}
     public FundsDebited(String placedBy, double funds) {
         this.placedBy = placedBy;
         this.funds = funds;
@@ -29,6 +30,7 @@ public class FundsDebited implements Events{
     public void setTimeAt(LocalDateTime timeAt) {
         this.timeAt = timeAt;
     }
+
     @Override
     public LocalDateTime getDate() {
         return null;

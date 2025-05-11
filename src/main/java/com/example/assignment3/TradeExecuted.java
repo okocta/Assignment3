@@ -2,13 +2,14 @@ package com.example.assignment3;
 
 import java.time.LocalDateTime;
 
-public class TradeExecuted implements Events{
+public class TradeExecuted extends Events{
     private LocalDateTime timeAt;
     private double price;
     private double quantity;
     private int sellID;
     private int buyID;
 
+    public TradeExecuted(){}
     public TradeExecuted(double price, double quantity, int sellID, int buyID) {
         this.price = price;
         this.quantity = quantity;

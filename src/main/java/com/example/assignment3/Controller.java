@@ -21,8 +21,8 @@ public class Controller {
     }
 
     @GetMapping("/place")
-    public String placeOrder(@RequestParam String placedBY,@RequestParam String type, @RequestParam double amount,@RequestParam double price) {
-        commandHandler.placeOrder(placedBY, type, amount, price);
+    public String placeOrder(@RequestParam String placedBY,@RequestParam String otype, @RequestParam double amount,@RequestParam double price) {
+        commandHandler.placeOrder(placedBY, otype, amount, price);
         return "OK";
     }
     @GetMapping("/cancel")

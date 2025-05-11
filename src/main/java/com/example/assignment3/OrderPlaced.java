@@ -3,22 +3,23 @@ package com.example.assignment3;
 
 import java.time.LocalDateTime;
 
-public class OrderPlaced implements Events{
+public class OrderPlaced extends Events {
 
     private int orderId;
     private LocalDateTime placedAt;
     private String placedBy;
     private double price;
     private double quantity;
-    private String type;
+    private String otype;
 
-    public OrderPlaced(int orderId,String placedBy, double price, double quantity, String type) {
+    public OrderPlaced() {}
+    public OrderPlaced(int orderId,String placedBy, double price, double quantity, String otype) {
         this.orderId = orderId;
         this.placedAt = LocalDateTime.now();
         this.placedBy = placedBy;
         this.price = price;
         this.quantity = quantity;
-        this.type = type;
+        this.otype = otype;
 
     }
     public int getOrderId() {
@@ -51,12 +52,13 @@ public class OrderPlaced implements Events{
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    public String getType() {
-        return type;
+    public String getOType() {
+        return otype;
     }
-    public void setType(String type) {
-        this.type = type;
+    public void setOType(String otype) {
+        this.otype = otype;
     }
+
     @Override
     public LocalDateTime getDate() {
         return null;
