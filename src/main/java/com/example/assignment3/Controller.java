@@ -25,6 +25,33 @@ public class Controller {
         commandHandler.placeOrder(placedBY, type, amount, price);
         return "OK";
     }
+    @GetMapping("/cancel")
+    public String cancelOrder(@RequestParam int orderId) {
+        commandHandler.cancelOrder(orderId);
+        return "OK";
+    }
+    @GetMapping("/trade")
+    public String trade(@RequestParam int buyId,
+                        @RequestParam int sellId,
+                        @RequestParam double price,
+                        @RequestParam double amount) {
+        commandHandler.executeTrade(buyId, sellId, price, amount);
+        return "OK";
+    }
+
+    @GetMapping("/debit")
+    public String debit(@RequestParam String userId,
+                        @RequestParam double amount) {
+        commandHandler.debitFunds(userId, amount);
+        return "OK";
+    }
+
+    @GetMapping("/credit")
+    public String credit(@RequestParam String userId,
+                         @RequestParam double amount) {
+        commandHandler.creditFunds(userId, amount);
+        return "OK";
+    }
     @GetMapping("/replay")
     public String replay() {
         orderBook.replay(eventStore.getEvents());
